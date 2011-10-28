@@ -1,0 +1,48 @@
+#summary Vigor 2130 CLI (command-line interface)document
+
+= Introduction =
+
+2130 is basically a Linux box with OpenWrt software platform.
+The most command in Linux or OpenWrt can be used in 2130.
+
+CLI (command-line interface) access via Telnet/SSH ; use the password you set in the Web UI, the default _username/password_ is _admin/admin_ for root.You can also add user account in Web UI >> user.
+
+*Note*: You should change the root password for security issue. Especially when you turn on remote management. 
+
+= Internet Connection =
+
+  * *DHCP* mode: 
+{{{
+    #uci set network.wan.proto=dhcp
+    #uci commit
+    #/etc/init.d/network restart
+}}}
+
+  * *Static IP* mode: (example)
+{{{
+    #uci set network.wan.proto=static
+    #uci set network.wan.ipaddr=74.125.115.103
+    #uci set network.wan.netmask=255.255.255.0
+    #uci set network.wan.gateway=74.125.115.1
+    #uci set network.wan.dns=8.8.8.8
+    #uci add_list network.wan.dns=8.8.4.4 (2nd dns)
+    #uci commit
+    #/etc/init.d/network restart
+}}}
+
+  * *PPPoE* mode:
+{{{
+    #uci set network.wan.proto=pppoe
+    #uci set network.wan.username='myaccount'
+    #uci set network.wan.password='mypassword'
+    #uci commit
+    #/etc/init.d/network restart
+}}}
+
+  * for other settings, you can check the config file by:
+{{{
+    # cat /etc/config/network
+}}}
+
+
+
