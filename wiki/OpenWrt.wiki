@@ -1,0 +1,8 @@
+#summary the open router platform .
+
+= OpenWrt =
+
+see [http://wiki.openwrt.org]
+    [http://www.openwrt.org]
+
+
