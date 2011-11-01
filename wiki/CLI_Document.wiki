@@ -54,7 +54,7 @@ CLI (command-line interface) access via Telnet/SSH ; use the password you set in
     # uci commit wireless
 }}}
 
-  * *Set WPA_WPA2 PSK/TKIP or AES for SSID 1*
+  * *Set WPA_WPA2 PSK / TKIP or AES for SSID 1*
 {{{
     # uci set wireless.@wifi-iface[0].encryption=pskpsk2
     # uci set wireless.@wifi-iface[0].wpa_crypto=tkipaes
