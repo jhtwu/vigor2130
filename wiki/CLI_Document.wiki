@@ -45,4 +45,19 @@ CLI (command-line interface) access via Telnet/SSH ; use the password you set in
 }}}
 
 
+= Wireless =
 
+  * *Set channel & SSID for SSID 1:*
+{{{
+    # uci set wireless.ra0.channel=6
+    # uci set wireless.@wifi-iface[0].ssid=MyFirstSSID
+    # uci commit wireless
+}}}
+
+  * *Set WPA_WPA2 PSK/TKIP or AES for SSID 1*
+{{{
+    # uci set wireless.@wifi-iface[0].encryption=pskpsk2
+    # uci set wireless.@wifi-iface[0].wpa_crypto=tkipaes
+    # uci set wireless.@wifi-iface[0].key=99999999
+    # uci commit wireless
+}}}
